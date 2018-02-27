@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<title>Instaclone</title>
+</head>
+
+<body style="background:#f9f9f9">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+
+				<div class="row">
+
+					<div class="col-md-4">
+						<img style="border-radius:50%;border:1px solid #ededed" src="{{user.profile_pic_url}}">
+					</div>
+
+					<div class="col-md-8">
+						<h1 style="font-size: 32px; line-height: 40px;font-weight: 200;">{{user.username}}</h1>
+
+						<div class="row">
+
+							<div class="col-md-3">
+								<span>
+									<strong>{{user.media.count}}</strong> Posts</span>
+							</div>
+
+							<div class="col-md-3">
+								<span>
+									<strong>{{user.followed_by.count}}</strong> Followers</span>
+
+							</div>
+
+							<div class="col-md-3">
+								<span>
+									<strong>{{user.follows.count}}</strong> Following</span>
+
+							</div>
+
+						</div>
+
+						<p style="margin-top:12px;">
+							<strong>{{user.full_name}}</strong> {{user.biography}}</p>
+						<p>
+							<strong>{{user.external_url}}</strong>
+						</p>
+
+					</div>
+
+				</div>
+
+				<div class=" row ">
+					{{#user.media.nodes}}
+
+					<div class="col-md-4 ">
+
+						<div style="padding:8px ">
+							<img style="width: 100% " src="{{thumbnail_src}} " />
+						</div>
+
+					</div>
+
+					{{/user.media.nodes}}
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</body>
+
+</html>
